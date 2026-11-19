@@ -1,31 +1,63 @@
-Title: Software Developer
+Title: Data Engineer
 Date: 2020-06-19 14:30
-Modified: 2020-06-19 14:30
+Modified: 2026-11-18 15:45
 Category: Resume
 Slug: my-resume
 Summary: My Curriculum Vitae 
 
+I am a highly skilled and experienced Data Engineer with a strong background in Python, SQL, and cloud platforms such as AWS and GCP. I have demonstrated expertise in data pipeline orchestration tools, including Prefect, Luigi, and Dagster, and have extensive experience with relational databases and version control systems like Git. My career spans roles at several prominent companies, most recently at Strata Decision Technology, where I advanced from Data Engineer III to Senior Staff Data Engineer, mentoring junior engineers, managing large datasets, and transitioning pipeline tools.
+
 # Skills
  
-- Mongo
+- Python
+- Prefect, Luigi, Dagster
+- AWS, GCP
 - Relational Databases
-- Git and GitHub
+- Git, GitHub, GitLab
 - Command Line Interface
-- RabbitMQ
-- AWS
-- Jenkins
-- Python 
 - SQL
-- Javascript (React)
-- XML
-- Java
-- Flask
-- Scrapy
+- dbt
 
 # Experience
 
+## Strata Decision Technology / Senior Staff Data Engineer
+#### March 2024 - Present  
+Mentored and assisted more junior engineers.  
+Handled custom requests for clients.  
+Delivered new APCD Remit data pipeline.  
+Maintained and improved Luigi pipelines for multi-billion row dataset.  
+Assisted with conversion from Luigi to Dagster as a pipeline tool.  
+Assisted Architect on larger projects.  
+Managed multiple major Python and other dependency upgrades.  
+Managed deprecation and removal of thousands of lines of code.  
+Managed modernization of Data Products.
+
+## Strata Decision Technology / Data Engineer III
+#### November 2022 - March 2024  
+Mentored and assisted more junior engineers.  
+Handled custom requests for clients.  
+Took over and finished operationalization of company's first ML pipeline.  
+Maintained and improved Luigi pipelines for multi-billion row dataset.  
+Assisted with conversion from Luigi to Dagster as a pipeline tool.  
+Oversaw dependency upgrade project from very old Python dependency pins.
+
+## Platform.sh / Data Engineer
+#### January 2021 - November 2022  
+Helped implement Prefect engine for data pipelines.  
+Oversaw POC for upgrade from Prefect 1.0 to 2.0.  
+Designed and built pipelines to pull data from private sources.  
+Managed Fivetran connectors for external sources.  
+POC for Hightouch Reverse ETL moving data from data warehouse into SFDC.  
+Designed and built pipelines to pull billing and current usage data from AWS, GCP, and Azure.  
+Technical Lead and mentoring for junior Data Engineer.  
+Peer Code Reviews.
+
+## Healthstream / Data Engineering Contractor
+#### October 2020 - December 2020  
+Worked with Taxonomy team to help build pipelines for search engine.
+
 ## Freelance / Contractor
-#### March 2020 - Present  
+#### March 2020 - October 2020  
 Bootstrap React Native application using AWS Amplify and GraphQL.  
 Upgrade JS dependencies on Heroku apps to improve security.
 
@@ -78,16 +110,10 @@ Administer and Develop for Adobe Campaign Platform including data loads, data de
 
 ## Griffin Technology / BI Developer
 #### August 2009 - July 2013,  Nashville, TN
-Administered Business Intelligence Server (OBIEE 10g) that services 100+ users at a company with over $200 million in yearly sales.  
-Built internal OBIEE reports and dashboards for 60% of the BI users.  
-Designed, developed, tested, and implemented all updates to the BI stack as requested by the business users.  
-Includes ETL, Data Warehouse structure, OBIEE repository, data validation.  
-Administered and configured a stand-alone BI Publisher server that provides ability to print shipping labels directly from ERP with minimal user input.  
-Developed Reports for BI Publisher when live data is needed for analysis and decision-making.  
-Provided Business User support and training upon request for OBIEE and BI Publisher.  
-Wrote and maintained documentation on how to use the BI software and configuration.  
-Offered SQL and data support to other IT teams through providing data dumps from JD Edwards, explanation of data structures, and assistance in query writing.  
-Integrated multiple systems into EDW (Oracle Agile, customer data, manually created and managed spreadsheets, Google Analytics, and Salesforce.com).
+Administered Business Intelligence Server (OBIEE 10g) that services 100+ users at a company with over $200 million in yearly sales.
+
+## Griffin Technology / EDI Support Analyst
+#### November 2007 - August 2009,  Nashville, TN
 
 # Education
 
@@ -97,9 +123,9 @@ August 2003 - May 2007,  Nashville, TN
 
 # Activities
 
-#### PyTN Talk Selection Committee 2020
-Was a member of the committee to select the speakers for PyTN 2020 held on March 7-8, 2020.
-
 #### Nashville Music Hackathon 2017
 Helped to rebuild Linr Notes v2 which converted the application to a Flask REST API and React front end.  
 https://github.com/CoreyAR/linr-notes
+
+#### PyTN Talk Selection Committee 2020
+Was a member of the committee to select the speakers for PyTN 2020 held on March 7-8, 2020.
