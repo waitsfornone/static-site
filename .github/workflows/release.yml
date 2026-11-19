@@ -1,0 +1,70 @@
+name: Release site
+
+# Publishes the built site to waitsfornone/waitsfornone.github.io (GitHub Pages,
+# served at https://timenders.us). Runs only when a version tag is pushed, e.g.:
+#   git tag v2026.11.19 && git push origin v2026.11.19
+# or by creating a release with a new tag in the GitHub UI.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Require tag to be on master
+        run: |
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/master; then
+            echo "::error::Tag $GITHUB_REF_NAME is not on master. Merge to master first, then tag."
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: .python-version
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: pelican content -o build -s publishconf.py
+
+      - name: Check out Pages repo
+        uses: actions/checkout@v4
+        with:
+          repository: waitsfornone/waitsfornone.github.io
+          ssh-key: ${{ secrets.PAGES_DEPLOY_KEY }}
+          path: pages
+
+      - name: Sync build into Pages repo
+        run: |
+          # Keep .git and the CNAME file (custom domain); replace everything else.
+          rsync -a --delete --exclude '.git' --exclude 'CNAME' build/ pages/
+
+      - name: Commit and push
+        working-directory: pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+            exit 0
+          fi
+          git commit -m "Release ${GITHUB_REF_NAME} (static-site@${GITHUB_SHA::7})"
+          git push
